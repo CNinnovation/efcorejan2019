@@ -2,6 +2,7 @@
 using FirstSample.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
 using System;
 using System.Threading.Tasks;
 
@@ -16,18 +17,12 @@ namespace FirstSample
             var controller = Container.GetRequiredService<IMyBooksController>();
             await controller.CreateDatabaseAsync();
 
-            var books = new[]
-            {
-                 new Book { Title = "Professional C# 7", Publisher = "Wrox Press" },
-                 new Book { Title = "Enterprise Services", Publisher = "AWL" },
-            };
-            // await controller.AddBooksAsync(books);
 
             controller.ReadBooks();
 
         }
 
-        private const string ConnectionString = @"server=(localdb)\mssqllocaldb;database=BooksSample2;trusted_connection=true";
+        private const string ConnectionString = @"server=(localdb)\mssqllocaldb;database=BooksSample3;trusted_connection=true";
 
         private static void RegisterServices()
         {
@@ -37,6 +32,11 @@ namespace FirstSample
                 options.UseSqlServer(ConnectionString);
             });
             services.AddTransient<IMyBooksController, MyBooksController>();
+
+            services.AddLogging(options =>
+            {
+                options.AddConsole().AddDebug().AddFilter("Microsoft.EntityFrameworkCore.Database.Command", LogLevel.Debug);
+            });
 
             Container = services.BuildServiceProvider();
         }

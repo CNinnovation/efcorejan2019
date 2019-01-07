@@ -20,8 +20,23 @@ namespace FirstSample.Models
 
         //    optionsBuilder.UseSqlServer(ConnectionString);
 
-           
+
         //}
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+
+            modelBuilder.Entity<Book>().ToTable("MyBooks").Property(b => b.Publisher).IsRequired(false).HasMaxLength(20);
+
+
+            var books = new[]
+            {
+                 new Book { BookId=1, Title = "Professional C# 7", Publisher = "Wrox Press" },
+                 new Book { BookId=2, Title = "Enterprise Services", Publisher = "AWL" },
+            };
+            modelBuilder.Entity<Book>().HasData(books);
+        }
 
         public DbSet<Book> Books { get; set; }
     }
