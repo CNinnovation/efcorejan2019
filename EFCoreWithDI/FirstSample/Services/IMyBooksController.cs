@@ -8,5 +8,7 @@ namespace FirstSample.Services
     {
         Task AddBooksAsync(IEnumerable<Book> books);
         Task CreateDatabaseAsync();
+
+        void ReadBooks();
     }
 }

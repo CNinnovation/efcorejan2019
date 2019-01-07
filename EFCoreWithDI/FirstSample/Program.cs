@@ -21,7 +21,9 @@ namespace FirstSample
                  new Book { Title = "Professional C# 7", Publisher = "Wrox Press" },
                  new Book { Title = "Enterprise Services", Publisher = "AWL" },
             };
-            await controller.AddBooksAsync(books);
+            // await controller.AddBooksAsync(books);
+
+            controller.ReadBooks();
 
         }
 

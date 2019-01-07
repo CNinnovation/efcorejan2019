@@ -1,6 +1,7 @@
 ﻿using FirstSample.Models;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -23,6 +24,15 @@ namespace FirstSample.Services
         {
             await _booksContext.Books.AddRangeAsync(books);
             await _booksContext.SaveChangesAsync();
+        }
+
+        public void ReadBooks()
+        {
+            var books = _booksContext.Books.Where(b => b.Publisher == "Wrox Press");
+            foreach (var book in books)
+            {
+                Console.WriteLine($"{book.Title}");
+            }
         }
     }
 }
