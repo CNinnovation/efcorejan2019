@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.168
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TableSplitting", "TableSplitting.csproj", "{B5EBFB96-C547-47BC-BF8E-E947712F87A3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B5EBFB96-C547-47BC-BF8E-E947712F87A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B5EBFB96-C547-47BC-BF8E-E947712F87A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B5EBFB96-C547-47BC-BF8E-E947712F87A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B5EBFB96-C547-47BC-BF8E-E947712F87A3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CD407B57-4D25-4B3B-9BF1-BB63E3865907}
+	EndGlobalSection
+EndGlobal
