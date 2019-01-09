@@ -61,7 +61,6 @@ namespace OwnedEntities
         {
             using (var context = new OwnedEntitiesContext())
             {
-                
                 bool created = context.Database.EnsureCreated();
                 string creationInfo = created ? "created" : "exists";
                 Console.WriteLine($"database {creationInfo}");

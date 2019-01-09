@@ -75,6 +75,8 @@ namespace FirstSample.Services
 
             foreach (var b in q)
             {
+                (_, var pub, _) = b;
+
                 Console.WriteLine($"{b.Title}");
                 foreach (var c in b.Chapters)  // pro Buch 1 Query für Chapters
                 {
